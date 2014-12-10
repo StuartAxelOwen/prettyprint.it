@@ -9,7 +9,14 @@ RUN apt-get update
 
 # Copy source
 COPY . /src
+WORKDIR /src
+
+# Get package dependencies
+RUN npm update
+
+EXPOSE 8080
 
 # Define default command.
-CMD ["node", "/src/index.js"]
+CMD ["node", "index.js"]
+ENTRYPOINT ["node", "index.js"]
 

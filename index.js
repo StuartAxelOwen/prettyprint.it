@@ -10,4 +10,7 @@ app.get('/robots.txt', function(req, res) {
 
 app.use('/static', express.static(__dirname + '/static'));
 
-var server = app.listen(8080, "0.0.0.0");
+var port = 8080, ip = "0.0.0.0";
+var server = app.listen(port, ip, function() {
+	console.log("Listening on " + ip + ":" + port + "...");
+});

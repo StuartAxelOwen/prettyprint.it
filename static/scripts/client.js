@@ -6,7 +6,7 @@ var prettyprint = (function(document, window) {
 
   (function stretchTextAreas() {
     var header = document.getElementById('header');
-    var textAreaHeight = (window.innerHeight || document.documentElement.clientHeight) - header.offsetHeight - 5;
+    var textAreaHeight = (window.innerHeight || document.documentElement.clientHeight) - header.offsetHeight - 48;
     inEle.style.height = textAreaHeight;
     outEle.style.height = textAreaHeight;
   })();
