@@ -1,0 +1,13 @@
+// client.js
+
+var prettyprint = (function(document) {
+  var inEle = document.getElementById('text-input');
+  var outEle = document.getElementById('text-output');
+
+  function renderJSON() {
+    var text = inEle.value;
+    console.log(text);
+  }
+
+  return {renderJSON: renderJSON};
+})(document);

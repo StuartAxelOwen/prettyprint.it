@@ -1,0 +1,24 @@
+<html>
+  <head>
+    <title>Pretty Print It.  Beautify JSON, XML, and other formats.</title>
+
+    <meta name="description" content="Pretty print your JSON and XML with a beautiful, simple interface.">
+
+    <link rel="canonical" href="http://prettyprint.it/" />
+    <link rel="stylesheet" href="/static/stylesheets/index.css" />
+
+    <link href='http://fonts.googleapis.com/css?family=Roboto+Slab:300,100' rel='stylesheet' type='text/css'>
+  </head>
+  <body>
+    <header id="header">
+      <h1><span class="prettyprint">prettyprint</span>.<span class="it">it</span></h1>
+    </header>
+    <section id="input-section">
+      <textarea id="text-input" onchange="prettyprint.render()" onkeyup="prettyprint.render()" placeholder="Paste your JSON or XML here."></textarea>
+    </section>
+    <section id="output-section">
+      <textarea id="text-output"></textarea>
+    </section>
+    <script src="/static/scripts/client.js"></script>
+  </body>
+</html>
