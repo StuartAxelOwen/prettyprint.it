@@ -16,12 +16,17 @@
     </header>
     <section id="input-section">
       <label for="text-input">Paste JSON to be formatted here:</label>
-      <textarea id="text-input" onchange="prettyprint.render()" onkeyup="prettyprint.render()" placeholder="Paste your JSON here."></textarea>
+      <div id="text-input" onchange="prettyprint.render()" onkeyup="prettyprint.render()" placeholder="Paste your JSON here."></div>
     </section>
     <section id="output-section">
       <label for="text-output">Formatted JSON output here:</label>
-      <textarea id="text-output"></textarea>
+      <div id="text-output"></div>
     </section>
+    <script src="/static/scripts/ace/ace.js"></script>
     <script src="/static/scripts/client.js"></script>
+    <script>
+      var editor = ace.edit("text-output");
+      editor.getSession().setMode("ace/mode/json");
+    </script>
   </body>
 </html>

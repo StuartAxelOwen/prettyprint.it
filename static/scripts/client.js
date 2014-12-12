@@ -1,6 +1,6 @@
 // client.js
 
-var prettyprint = (function(document, window) {
+var prettyprint = (function(document, window, ace) {
   var inEle = document.getElementById('text-input');
   var outEle = document.getElementById('text-output');
 
@@ -10,18 +10,26 @@ var prettyprint = (function(document, window) {
     inEle.style.height = textAreaHeight;
     outEle.style.height = textAreaHeight;
   })();
-  inEle.focus();
+  
+  var inAce = ace.edit("text-input");
+  var outAce = ace.edit("text-output");
+
+  inAce.getSession().setUseWrapMode(true);
+  outAce.getSession().setUseWrapMode(true);
+  outAce.setReadOnly(true);
+  inAce.focus();
 
   function render() {
     renderJSON();
   }
 
   function renderJSON() {
-    outEle.value = JSON.stringify(JSON.parse(inEle.value), undefined, 2);
+    outAce.setValue(JSON.stringify(JSON.parse(inAce.getValue()), undefined, 4), 1);
   }
 
   return {
     renderJSON: renderJSON,
     render: render
   };
-})(document, window);
+})(document, window, ace);
+
