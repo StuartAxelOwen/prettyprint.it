@@ -22,7 +22,7 @@
 
     <section id="output-section">
       <label for="text-output">Formatted JSON output here:</label>
-      <div id="text-output"></div>
+      <div id="text-output">""</div>
     </section>
 
     <script>
@@ -34,7 +34,7 @@
       ga('create', 'UA-39509748-5', 'auto');
       ga('send', 'pageview');
     </script>
-    <script src="/static/scripts/ace/ace.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/ace/1.1.3/ace.js"></script>
     <script src="/static/scripts/client.js"></script>
     <script>
       var editor = ace.edit("text-output");
