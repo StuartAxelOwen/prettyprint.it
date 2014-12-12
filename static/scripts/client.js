@@ -1,6 +1,6 @@
 // client.js
 
-var prettyprint = (function(document, window, ace) {
+var prettyprint = (function(document, window, ace, ga) {
   var inEle = document.getElementById('text-input');
   var outEle = document.getElementById('text-output');
 
@@ -24,6 +24,7 @@ var prettyprint = (function(document, window, ace) {
   }
 
   function renderJSON() {
+    ga('send', 'event', 'render', 'json');
     outAce.setValue(JSON.stringify(JSON.parse(inAce.getValue()), undefined, 4), 1);
   }
 
@@ -31,5 +32,5 @@ var prettyprint = (function(document, window, ace) {
     renderJSON: renderJSON,
     render: render
   };
-})(document, window, ace);
+})(document, window, ace, ga);
 
