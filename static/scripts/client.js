@@ -22,15 +22,19 @@ var prettyprint = (function(document, window, ace, ga, vkb) {
 
   function render() {
     var result = '',
+        mode = 'json',
         input = inAce.getValue();
     
     try {
       result = renderJSON(input);
+      mode = 'json';
       ga('send', 'event', 'render', 'json');
     } catch (e) { 
       result = renderXML(input);
+      mode = 'xml';
       ga('send', 'event', 'render', 'xml');
     }
+    outAce.getSession().setMode('ace/mode/' + mode);
     outAce.setValue(result, 1);
   }
 

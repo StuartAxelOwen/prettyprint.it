@@ -1,8 +1,8 @@
 <html>
   <head>
-    <title>Pretty Print It - the JSON formatter.</title>
+    <title>Pretty Print It - the JSON and XML formatter.</title>
 
-    <meta name="description" content="Pretty print your JSON with a beautiful, simple interface.">
+    <meta name="description" content="Pretty print your JSON or XML with a beautiful, simple interface.">
 
     <link rel="canonical" href="http://prettyprint.it/" />
     <link rel="stylesheet" href="/static/stylesheets/index.css" />
@@ -16,12 +16,12 @@
     </header>
 
     <section id="input-section">
-      <label for="text-input">Paste JSON to be formatted here:</label>
+      <label for="text-input">Paste JSON or XML to be formatted here:</label>
       <div id="text-input" onchange="prettyprint.render()" onkeyup="prettyprint.render()" placeholder="Paste your JSON here."></div>
     </section>
 
     <section id="output-section">
-      <label for="text-output">Formatted JSON output here:</label>
+      <label for="text-output">Formatted JSON or XML output here:</label>
       <div id="text-output">""</div>
     </section>
 
